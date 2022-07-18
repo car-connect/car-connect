@@ -10,10 +10,15 @@ export class UserService {
   constructor(public http:HttpClient,public router:Router) { }
 
   UserADD(item:any){
-    this.http.post(`http://localhost:8000/user`,item)
+    this.http.post(`http://localhost:8000/user/signup`,item)
     .subscribe((res)=>{
-      this.router.navigate(['login'])
-      console.log("yeh",res);
+      if(res=="User Inserted"){
+
+        this.router.navigate(['login'])
+      }else{
+        alert(res)
+
+      }
       
     },
     err=>{
@@ -25,5 +30,12 @@ export class UserService {
     
       
     
+  }
+  GoogleADD(){
+    this.http.get(`http://localhost:8000/auth/google`)
+    .subscribe((res)=>{
+      console.log("google",res);
+      
+    })
   }
 }
