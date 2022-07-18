@@ -15,7 +15,12 @@ export class UserService {
       this.router.navigate(['login'])
       console.log("yeh",res);
       
-    })
+    },
+    err=>{
+      console.log(err);
+      
+    }
+    )
     
     
       
