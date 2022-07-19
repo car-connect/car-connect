@@ -9,6 +9,13 @@ import { UserService } from '../user.service';
 export class LoginComponent implements OnInit {
 
   constructor(public userservice:UserService) { }
+  User:any={
+    username:'',
+    password:''
+  }
+  UserADD(){
+    this.userservice.loginADD(this.User)
+  }
   google(){
     this.userservice.GoogleADD()
 

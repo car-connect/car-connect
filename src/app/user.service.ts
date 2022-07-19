@@ -12,7 +12,7 @@ export class UserService {
   UserADD(item:any){
     this.http.post(`http://localhost:8000/user/signup`,item)
     .subscribe((res)=>{
-      if(res=="User Inserted"){
+      if(res=='add'){
 
         this.router.navigate(['login'])
       }else{
@@ -35,6 +35,16 @@ export class UserService {
     this.http.get(`http://localhost:8000/auth/google`)
     .subscribe((res)=>{
       console.log("google",res);
+      
+    })
+  }
+  loginADD(item:any){
+    this.http.post(`http://localhost:8000/user/login`,item)
+    .subscribe((res)=>{
+      console.log("oko",res);
+      if(res){
+        this.router.navigate([''])
+      }
       
     })
   }

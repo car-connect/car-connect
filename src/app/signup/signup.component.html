@@ -2,7 +2,7 @@
     <h2>SIGNUP</h2>
     <form action="" (ngSubmit)="addUser()">
       <div class="user-box">
-        <input
+        <!-- <input
           type="text"
           name="name"
           class="userbox1"
@@ -10,7 +10,7 @@
           placeholder="Enter name"
           [(ngModel)]="User.username"
         />
-        <label htmlFor="">Name</label>
+        <label htmlFor="">Name</label> -->
       </div>
       <div class="user-box">
         <input
@@ -18,7 +18,7 @@
           name="email"
           id=""
           placeholder="Enter email"
-          [(ngModel)]="User.email"
+          [(ngModel)]="User.username"
         />
         <label htmlFor="">Email</label>
       </div>
@@ -26,7 +26,7 @@
         <input
           type="password"
           name="password"
-          id=""
+          id="password"
           placeholder="Password"
           [(ngModel)]="User.password"
         />
@@ -43,3 +43,4 @@
       <a routerLink="/login" style="margin-left: 55px;">LOGIN</a>
     </form>
   </div>
+  
