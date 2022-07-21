@@ -14,11 +14,12 @@
       </div>
       <div class="user-box">
         <input
-          type="text"
+          type="email"
           name="email"
           id=""
           placeholder="Enter email"
           [(ngModel)]="User.username"
+          required
         />
         <label htmlFor="">Email</label>
       </div>
@@ -29,6 +30,7 @@
           id="password"
           placeholder="Password"
           [(ngModel)]="User.password"
+          (keyup)="validation()"
         />
         <label htmlFor="">Password</label>
       </div>
@@ -43,4 +45,23 @@
       <a routerLink="/login" style="margin-left: 55px;">LOGIN</a>
     </form>
   </div>
+  <div style="margin-top: 520px; margin-left: 610px;">
+    <div class="col-sm-4">
+      <div class="card social-block">
+        <div class="card-body">
+          <a class="btn btn-block btn-social btn-google"  role="button">
+            <i class="fab fa-google"></i>
+            Sign Up with Google
+          </a>
+        </div>
+        <div class="card-body">
+          <a class="btn btn-block btn-social btn-facebook"  role="button">
+            <i class="fab fa-facebook"></i>
+            Sign Up with Facebook
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   

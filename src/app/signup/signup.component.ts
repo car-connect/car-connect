@@ -18,6 +18,10 @@ export class SignupComponent implements OnInit {
   addUser(){
     this.userService.UserADD(this.User)
   }
+  validation(){
+    
+    
+  }
 
   ngOnInit(): void {
   }

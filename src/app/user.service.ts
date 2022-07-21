@@ -11,18 +11,18 @@ export class UserService {
 
   UserADD(item:any){
     this.http.post(`http://localhost:8000/user/signup`,item)
-    .subscribe((res)=>{
-      if(res=='add'){
+    .subscribe((res:any)=>{
+      if(res.message=='authenticated'){
 
         this.router.navigate(['login'])
       }else{
-        alert(res)
+        alert(res.message)
 
       }
       
     },
     err=>{
-      console.log(err);
+      console.log("error in HTTPCLIENT",err);
       
     }
     )
@@ -40,10 +40,13 @@ export class UserService {
   }
   loginADD(item:any){
     this.http.post(`http://localhost:8000/user/login`,item)
-    .subscribe((res)=>{
+    .subscribe((res:any)=>{
       console.log("oko",res);
-      if(res){
+      if(res.message=='authenticated'){
         this.router.navigate([''])
+      }
+      else{
+        alert("Invalid Credentials")
       }
       
     })

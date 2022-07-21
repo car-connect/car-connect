@@ -172,11 +172,10 @@
     transition: 0.5s;
     color: white;
 }  
-#responsive{
-  width: 100% ;
-  aspect-ratio: 100/29;
-}
-#demo1{
-  font-size: 1em;
-  background: transparent !important;
+#heading{
+    text-align: center;
+    margin-top: 20px;
+    font-family: 'Alfa Slab One', cursive;
+    color: #525D77;
+
 }

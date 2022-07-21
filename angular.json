@@ -29,7 +29,12 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "src/assets/js/slider.js",
+              "src/assets/js/validation.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -96,7 +101,12 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "src/assets/js/slider.js",
+              "src/assets/js/validation.js"
+            ]
           }
         }
       }

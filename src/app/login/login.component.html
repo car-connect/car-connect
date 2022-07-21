@@ -4,11 +4,12 @@
      
       <div class="user-box">
         <input
-          type="text"
+          type="email"
           name="email"
           id=""
           placeholder="Enter email"
           [(ngModel)]="User.username"
+          required
         />
         <label htmlFor="">Email</label>
       </div>
@@ -19,6 +20,7 @@
           id=""
           placeholder="Password"
           [(ngModel)]="User.password"
+          required
         />
         <label htmlFor="">Password</label>
       </div>
@@ -33,8 +35,23 @@
       <a routerLink="/signup" style="margin-left: 55px;">SIGNUP</a>
 
     </form>
+    <div class="row" style="margin-top: 15px;">
+      <div class="col-md-12">
+        <a class="btn btn-lg btn-google btn-block text-uppercase btn-outline bg-transparent" (click)="google()"><img src="https://img.icons8.com/color/16/000000/google-logo.png"><b id="demo1"> Signup Using Google</b></a>
+  
+      </div>
   </div>
-  <div style="margin-top: 520px; margin-left: 610px;">
+  </div>
+  <div style="margin-top: 600px; margin-left: 610px;">
+    <div class="col-sm-4">
+      <div class="card social-block">
+       
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- <div style="margin-top: 520px; margin-left: 610px;" id="responsive" >
   <div class="col-sm-4">
     <div class="card social-block">
       <div class="card-body">
@@ -51,4 +68,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
