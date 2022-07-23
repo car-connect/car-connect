@@ -8,7 +8,9 @@ import { Router } from '@angular/router';
 export class AdminService {
 
   constructor(public http:HttpClient,public router:Router) { }
-
+  tokenCheck(){
+    return localStorage.getItem('token')
+  }
   adminADD(item:any){
     this.http.post(`http://localhost:8000/admin/login`,item)
     .subscribe((res:any)=>{
@@ -22,7 +24,7 @@ export class AdminService {
       }
       else if(res.auth==true){
         localStorage.setItem('token',res.token)
-        this.router.navigate([""])
+        this.router.navigate(["adminhome"])
       }
       console.log(res);
       

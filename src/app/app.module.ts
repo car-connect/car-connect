@@ -10,7 +10,8 @@ import { SignupComponent } from './signup/signup.component';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
-import { AdminLoginComponent } from './admin-login/admin-login.component'
+import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { AdminHomeComponent } from './admin-home/admin-home.component'
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AdminLoginComponent } from './admin-login/admin-login.component'
     LoginComponent,
     SignupComponent,
     HomeComponent,
-    AdminLoginComponent
+    AdminLoginComponent,
+    AdminHomeComponent
   ],
   imports: [
     BrowserModule,

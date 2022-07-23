@@ -43,12 +43,15 @@ export class UserService {
     .subscribe((res:any)=>{
       console.log("oko",res);
       if(res.message=='authenticated'){
+        localStorage.setItem("token",res.token)
+        localStorage.setItem("user",res.user.username)
         this.router.navigate([''])
       }
       else{
         alert("Invalid Credentials")
       }
       
-    })
+    },err=>alert(err.error)
+    )
   }
 }
