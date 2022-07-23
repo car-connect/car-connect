@@ -55,7 +55,7 @@ export class UserService {
     })
   }
   loginADD(item:any){
-    this.http.post(`http://localhost:8000/user/login`,item)
+    this.http.post(`http://localhost:8000/user/login`,item,{ headers: this.headers })
     .subscribe((res:any)=>{
       console.log("oko",res);
       if(res.message=='authenticated'){

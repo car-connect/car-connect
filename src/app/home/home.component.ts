@@ -17,11 +17,14 @@ export class HomeComponent implements OnInit {
     this.users.home()
 
   }
+  UserInfo(){
+    this.username= localStorage.getItem('user')
+  }
   
 
   ngOnInit(): void {
     this.user()
-    
+    this.UserInfo()
 
   }
 
