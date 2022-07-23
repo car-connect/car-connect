@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -7,8 +7,24 @@ import { Router } from '@angular/router';
 })
 export class UserService {
 
+  headers = new HttpHeaders().set('Content-Type', 'application/json');
   constructor(public http:HttpClient,public router:Router) { }
 
+  home(){
+    this.http.get(`http://localhost:8000/user/home`,{ headers: this.headers })
+    .subscribe((res)=>{
+      console.log("uu",res);
+
+      
+    })
+  }
+  getToken() {
+    return localStorage.getItem('token');
+  }
+  get isLoggedIn(): boolean {
+    let authToken = localStorage.getItem('token');
+    return authToken !== null ? true : false;
+  }
   UserADD(item:any){
     this.http.post(`http://localhost:8000/user/signup`,item)
     .subscribe((res:any)=>{

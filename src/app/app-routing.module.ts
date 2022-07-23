@@ -6,9 +6,10 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { UserGuard } from './user.guard';
 
 const routes: Routes = [
-  {path:'',component:HomeComponent},
+  {path:'',canActivate:[UserGuard],component:HomeComponent},
   {path:"login",component:LoginComponent},
   {path:"signup",component:SignupComponent},
   {path:"admin",component:AdminLoginComponent},

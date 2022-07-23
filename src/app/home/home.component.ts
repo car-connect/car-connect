@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../user.service';
 
 
 @Component({
@@ -9,16 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(public http:HttpClient) { }
+  constructor(public http:HttpClient,public users:UserService) { }
   username:any=''
   user(){
-    this.http.get(`http://localhost:8000/user/home`)
-    .subscribe((res)=>{
-      console.log(res);
-      this.username=res
-
-      
-    })
+    
+    this.users.home()
 
   }
   

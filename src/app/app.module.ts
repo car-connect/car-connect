@@ -8,10 +8,11 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { FormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component'
+import { AuthInterceptor } from './authconfig.interceptor';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,13 @@ import { AdminHomeComponent } from './admin-home/admin-home.component'
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
