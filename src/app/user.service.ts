@@ -28,9 +28,11 @@ export class UserService {
   UserADD(item:any){
     this.http.post(`http://localhost:8000/user/signup`,item)
     .subscribe((res:any)=>{
+      console.log(res);
+      
       if(res.message=='authenticated'){
 
-        this.router.navigate(['login'])
+        this.router.navigate(['signupauth',{user:res.user.username}])
       }else{
         alert(res.message)
 

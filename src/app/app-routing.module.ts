@@ -5,6 +5,7 @@ import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { SignupAuthComponent } from './signup-auth/signup-auth.component';
 import { SignupComponent } from './signup/signup.component';
 import { UserGuard } from './user.guard';
 
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path:'',canActivate:[UserGuard],component:HomeComponent},
   {path:"login",component:LoginComponent},
   {path:"signup",component:SignupComponent},
+  {path:"signupauth",component:SignupAuthComponent},
   {path:"admin",component:AdminLoginComponent},
   {path:"adminhome",
   canActivate:[AdminGuardGuard],

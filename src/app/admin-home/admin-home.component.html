@@ -1,1 +1,41 @@
-<p>admin-home works!</p>
+
+
+    <div class="container">
+        <div class="circle-container">
+            <div class="circle">
+                <button id="close">
+                    <i class="fas fa-times"></i>
+                </button>
+                <button id="open">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="content">
+            
+            <h3>Frontend...</h3>
+
+            
+        </div>
+    </div>
+
+    <nav>
+        <ul>
+            <li><i class="fas fa-home"></i>Home</li>
+            <li><i class="fas fa-user-alt"></i>About Us</li>
+            <li><i class="fas fa-envelope"></i>Contact Us</li>
+
+        </ul>
+    </nav>
+    <script>
+        const open = document.getElementById('open');
+        const close = document.getElementById('close');
+        const container = document.querySelector('.container');
+
+        open.addEventListener('click', () => container.classList.add('show-nav'));
+        close.addEventListener('click', () => container.classList.remove('show-nav'))
+
+
+    </script>
+ 

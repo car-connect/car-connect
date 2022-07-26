@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component'
 import { AuthInterceptor } from './authconfig.interceptor';
+import { SignupAuthComponent } from './signup-auth/signup-auth.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AuthInterceptor } from './authconfig.interceptor';
     SignupComponent,
     HomeComponent,
     AdminLoginComponent,
-    AdminHomeComponent
+    AdminHomeComponent,
+    SignupAuthComponent
   ],
   imports: [
     BrowserModule,

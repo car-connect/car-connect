@@ -13,7 +13,8 @@ export class SignupComponent implements OnInit {
 
   User:any={
     username:'',
-    password:''
+    password:'',
+    name:'',
   }
   addUser(){
     this.userService.UserADD(this.User)
