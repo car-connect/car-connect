@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { AdminService } from '../admin.service';
 import { UserService } from '../user.service';
 
 
@@ -10,8 +11,9 @@ import { UserService } from '../user.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(public http:HttpClient,public users:UserService) { }
+  constructor(public http:HttpClient,public users:UserService,public admin:AdminService) { }
   username:any=''
+  products:any=''
   user(){
     
     this.users.home()
@@ -26,6 +28,9 @@ export class HomeComponent implements OnInit {
     localStorage.setItem('header','user')
     this.user()
     this.UserInfo()
+    this.admin.GetProducts().subscribe((res:any)=>{
+      this.products=res
+    })
 
   }
 

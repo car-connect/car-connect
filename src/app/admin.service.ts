@@ -39,14 +39,12 @@ export class AdminService {
     })
   }
   GetProducts(){
-    this.http.get(`http://localhost:8000/admin/getproduct`)
-    .subscribe((res:any)=>{
-      this.Products=res
-      console.log(this.Products);
+   return this.http.get(`http://localhost:8000/admin/getproduct`)
+    
       
       
       
-    })
+ 
     
   }
   okay(){
