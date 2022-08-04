@@ -10,7 +10,10 @@ import { AdminService } from '../admin.service';
 export class AdminmanageproductComponent implements OnInit {
   products:any=''
   constructor(public admin:AdminService) { }
+  delete(id:any){
+    this.admin.deleteProduct(id)
 
+  }
 
   ngOnInit(): void {
     this.admin.GetProducts() .subscribe((res:any)=>{

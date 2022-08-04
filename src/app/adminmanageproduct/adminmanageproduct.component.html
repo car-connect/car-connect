@@ -9,6 +9,8 @@
         <th scope="col">Available_Quantity</th>
         <th scope="col">Discount</th>
         <th scope="col">Date</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
@@ -21,6 +23,8 @@
         <td>{{product.available_quantity}}</td>
         <td>{{product.percentage_discount}}%</td>
         <td>{{product.online_date}}</td>
+        <td><button class="btn btn-info">Edit</button></td>
+        <td><button class="btn btn-danger" (click)="delete(product._id)">Delete</button></td>
       </tr>
       
     </tbody>

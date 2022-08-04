@@ -34,7 +34,7 @@ export class AdminService {
   productADD(item:any){
     this.http.post(`http://localhost:8000/admin/addproduct`,item)
     .subscribe((res:any)=>{
-      console.log(res);
+      this.router.navigate(["adminhome/manageproduct"])
       
     })
   }
@@ -47,8 +47,14 @@ export class AdminService {
  
     
   }
-  okay(){
+  deleteProduct(id:any){
 
-    return this.Products;
+    return this.http.get(`http://localhost:8000/admin/deleteproduct/${id}`).subscribe((data)=>{
+      console.log(data);
+      
+      this.router.navigate(["adminhome/manageproduct"])
+      
+      
+    })
   }
 }
