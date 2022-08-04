@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AdminService {
+  Products:any=''
 
   constructor(public http:HttpClient,public router:Router) { }
   tokenCheck(){
@@ -29,5 +30,27 @@ export class AdminService {
       console.log(res);
       
     })
+  }
+  productADD(item:any){
+    this.http.post(`http://localhost:8000/admin/addproduct`,item)
+    .subscribe((res:any)=>{
+      console.log(res);
+      
+    })
+  }
+  GetProducts(){
+    this.http.get(`http://localhost:8000/admin/getproduct`)
+    .subscribe((res:any)=>{
+      this.Products=res
+      console.log(this.Products);
+      
+      
+      
+    })
+    
+  }
+  okay(){
+
+    return this.Products;
   }
 }

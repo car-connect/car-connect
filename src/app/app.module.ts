@@ -14,6 +14,8 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component'
 import { AuthInterceptor } from './authconfig.interceptor';
 import { SignupAuthComponent } from './signup-auth/signup-auth.component';
+import { AdminaddproductComponent } from './adminaddproduct/adminaddproduct.component';
+import { AdminmanageproductComponent } from './adminmanageproduct/adminmanageproduct.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { SignupAuthComponent } from './signup-auth/signup-auth.component';
     HomeComponent,
     AdminLoginComponent,
     AdminHomeComponent,
-    SignupAuthComponent
+    SignupAuthComponent,
+    AdminaddproductComponent,
+    AdminmanageproductComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+declare function slide():void;
 @Component({
   selector: 'app-admin-home',
   templateUrl: './admin-home.component.html',
@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminHomeComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    //  slide()
+   }
 
   ngOnInit(): void {
     localStorage.setItem('header','admin')
