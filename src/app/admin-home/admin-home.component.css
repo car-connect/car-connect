@@ -57,7 +57,7 @@ body{
 }
 
 .circle button#open{
-    left:60%;
+    left:50%;
 }
 
 .circle button#close{
@@ -118,4 +118,7 @@ nav ul li + li + li{
 .content h3 {
     font-style: italic;
     color:#222
+}
+.sidebar{
+    margin-top: 60px;
 }
