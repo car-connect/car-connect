@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../user.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-signup',
@@ -17,14 +17,21 @@ export class SignupComponent implements OnInit {
     name:'',
   }
   addUser(){
+    console.log("signup");
+    
     this.userService.UserADD(this.User)
   }
   validation(){
+    console.log(this.User);
+    console.log("working");
+    
+    
     
     
   }
 
   ngOnInit(): void {
+    
   }
 
 }

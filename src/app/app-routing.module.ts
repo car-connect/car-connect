@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdminGuardGuard } from './admin-guard.guard';
-import { AdminHomeComponent } from './admin-home/admin-home.component';
-import { AdminLoginComponent } from './admin-login/admin-login.component';
-import { AdminaddproductComponent } from './adminaddproduct/adminaddproduct.component';
-import { AdminmanageproductComponent } from './adminmanageproduct/adminmanageproduct.component';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { SignupAuthComponent } from './signup-auth/signup-auth.component';
-import { SignupComponent } from './signup/signup.component';
-import { UserGuard } from './user.guard';
+import { AdminGuardGuard } from './guards/admin-guard.guard';
+import { AdminHomeComponent } from './components/admin-home/admin-home.component';
+import { AdminLoginComponent } from './components/admin-login/admin-login.component';
+import { AdminaddproductComponent } from './components/adminaddproduct/adminaddproduct.component';
+import { AdminmanageproductComponent } from './components/adminmanageproduct/adminmanageproduct.component';
+import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
+import { SignupAuthComponent } from './components/signup-auth/signup-auth.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { UserGuard } from './guards/user.guard';
+
 
 const routes: Routes = [
   {path:'',canActivate:[UserGuard],component:HomeComponent},
