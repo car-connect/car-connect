@@ -1,3 +1,15 @@
+
+<div class="flexbox">
+  <div class="search">
+    <h3>click on search icon</h3>
+    <div>
+      <input type="text"
+       placeholder="Search..."
+       (keyup)="searchItem($event)"
+       required>
+    </div>
+  </div>
+</div>
 <table class="table">
     <thead>
       <tr>
@@ -14,7 +26,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let product of products">
+      <tr *ngFor="let product of ProductItem">
         <th scope="row" >{{product.product_id}}</th>
         <td>{{product.product_name}}</td>
         <td>{{product.product_price}}</td>

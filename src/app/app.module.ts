@@ -18,6 +18,10 @@ import { AdminHomeComponent } from './components/admin-home/admin-home.component
 import { AdminaddproductComponent } from './components/adminaddproduct/adminaddproduct.component';
 import { SignupAuthComponent } from './components/signup-auth/signup-auth.component';
 import { PlaceOrderComponent } from './components/place-order/place-order.component';
+import { ProductsComponent } from './components/products/products.component';
+import { CartComponent } from './components/cart/cart.component';
+import { ModalsComponent } from './components/modals/modals.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +36,11 @@ import { PlaceOrderComponent } from './components/place-order/place-order.compon
     SignupAuthComponent,
     AdminaddproductComponent,
     AdminmanageproductComponent,
-    PlaceOrderComponent
+    PlaceOrderComponent,
+    ProductsComponent,
+    CartComponent,
+    ModalsComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -9,6 +9,14 @@ export class AdminService {
   Products:any=''
 
   constructor(public http:HttpClient,public router:Router) { }
+  ImageAdd(formdata:any){
+  //  const headers= new HttpHeaders({ 'Content-Type': 'multipart/formdata' })
+    this.http.post(`https://api.cloudinary.com/v1_1/dg0vog2t7/upload`,formdata)
+    .subscribe((res:any)=>{
+      console.log(res);
+      
+    })
+  }
   tokenCheck(){
     return localStorage.getItem('token')
   }
@@ -38,15 +46,11 @@ export class AdminService {
       
     })
   }
-  GetProducts(){
-   return this.http.get(`http://localhost:8000/admin/getproduct`)
-    
+  GetProducts=()=>this.http.get(`http://localhost:8000/admin/getproduct`)
+  GetProducts2=(category:any)=>this.http.get(`http://localhost:8000/admin/getproduct/${category}`)
+  
       
-      
-      
- 
-    
-  }
+
   deleteProduct(id:any){
 
     return this.http.get(`http://localhost:8000/admin/deleteproduct/${id}`).subscribe((data)=>{

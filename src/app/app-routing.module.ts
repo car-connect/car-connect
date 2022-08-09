@@ -10,6 +10,9 @@ import { LoginComponent } from './components/login/login.component';
 import { SignupAuthComponent } from './components/signup-auth/signup-auth.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { UserGuard } from './guards/user.guard';
+import { PlaceOrderComponent } from './components/place-order/place-order.component';
+import { ProductsComponent } from './components/products/products.component';
+import { ModalsComponent } from './components/modals/modals.component';
 
 
 const routes: Routes = [
@@ -17,12 +20,15 @@ const routes: Routes = [
   {path:"login",component:LoginComponent},
   {path:"signup",component:SignupComponent},
   {path:"signupauth",component:SignupAuthComponent},
+  {path:"products/:category",component:ProductsComponent},
+  {path:"placeorder", component:PlaceOrderComponent},
   {path:"admin",component:AdminLoginComponent},
   {path:"adminhome",
   canActivate:[AdminGuardGuard],
   component:AdminHomeComponent},
   {path:"adminhome/addproduct",component:AdminaddproductComponent},
-  {path:"adminhome/manageproduct", component:AdminmanageproductComponent}
+  {path:"adminhome/manageproduct", component:AdminmanageproductComponent},
+  {path:"adminhome/editproduct",component:ModalsComponent}
 ];
 
 @NgModule({
