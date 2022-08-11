@@ -22,6 +22,12 @@ import { ProductsComponent } from './components/products/products.component';
 import { CartComponent } from './components/cart/cart.component';
 import { ModalsComponent } from './components/modals/modals.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { OrdersComponent } from './components/orders/orders.component';
+import { WishlistComponent } from './components/wishlist/wishlist.component';
+import { EditprofileComponent } from './components/editprofile/editprofile.component';
+import { Error404Component } from './components/error404/error404.component';
+import { AdminmanageuserComponent } from './components/adminmanageuser/adminmanageuser.component';
+import { LocationComponent } from './components/location/location.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +46,13 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
     ProductsComponent,
     CartComponent,
     ModalsComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    OrdersComponent,
+    WishlistComponent,
+    EditprofileComponent,
+    Error404Component,
+    AdminmanageuserComponent,
+    LocationComponent
   ],
   imports: [
     BrowserModule,

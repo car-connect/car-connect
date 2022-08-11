@@ -1,0 +1,52 @@
+<div class="col-md-6 grid-margin stretch-card">
+
+    <button type="submit" id="btn" class="btn btn-primary me-2" onclick="getLocation()">Check Weather</button>
+    <br>
+
+
+
+
+</div>
+<div>
+    <h4><span id="temp"></span>
+        <br>
+        <span id="loc"></span>
+        <br>
+        <span id="tz"></span>
+        <br>
+        <span id="text"></span>
+        <br>
+        <!-- <img id="img"></img> -->
+    </h4>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+  document.getElementById("temp").innerHTML="Geolocation is not supported by this browser."
+
+  }
+}
+
+function showPosition(position) {
+
+         $.get(`http://api.weatherapi.com/v1/current.json?key=f03551e36a9742a2a9591530220908&q=${position.coords.latitude},${position.coords.longitude}&aqi=no`,(res,status)=>{
+         console.log(res)
+         document.getElementById("temp").innerHTML=res.location.name
+         document.getElementById("loc").innerHTML=`${res.current.feelslike_c} ℃`
+         document.getElementById("tz").innerHTML=res.location.tz_id
+         document.getElementById("text").innerHTML=res.current.condition.text
+         $("#img").attr("src",res.current.condition.icon)
+
+                  })
+
+
+}
+
+
+
+
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

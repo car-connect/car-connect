@@ -13,6 +13,12 @@ import { UserGuard } from './guards/user.guard';
 import { PlaceOrderComponent } from './components/place-order/place-order.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ModalsComponent } from './components/modals/modals.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { OrdersComponent } from './components/orders/orders.component';
+import { WishlistComponent } from './components/wishlist/wishlist.component';
+import { CartComponent } from './components/cart/cart.component';
+import { EditprofileComponent } from './components/editprofile/editprofile.component';
+import { AdminmanageuserComponent } from './components/adminmanageuser/adminmanageuser.component';
 
 
 const routes: Routes = [
@@ -20,6 +26,13 @@ const routes: Routes = [
   {path:"login",component:LoginComponent},
   {path:"signup",component:SignupComponent},
   {path:"signupauth",component:SignupAuthComponent},
+  {path:"profile",component:UserProfileComponent,
+  children:[
+    {path:"orders",component:OrdersComponent},
+    {path:"wishlist",component:WishlistComponent},
+    {path:"editprofile",component:EditprofileComponent},
+  ]},
+  {path:'cart',component:CartComponent},
   {path:"products/:category",component:ProductsComponent},
   {path:"placeorder", component:PlaceOrderComponent},
   {path:"admin",component:AdminLoginComponent},
@@ -28,7 +41,8 @@ const routes: Routes = [
   component:AdminHomeComponent},
   {path:"adminhome/addproduct",component:AdminaddproductComponent},
   {path:"adminhome/manageproduct", component:AdminmanageproductComponent},
-  {path:"adminhome/editproduct",component:ModalsComponent}
+  {path:"adminhome/editproduct",component:ModalsComponent},
+  {path:"adminhome/manageuser",component:AdminmanageuserComponent}
 ];
 
 @NgModule({

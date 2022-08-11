@@ -1,0 +1,43 @@
+
+<div class="flexbox">
+    <div class="search">
+      <h3>click on search icon</h3>
+      <div>
+        <input type="text"
+         placeholder="Search..."
+         (keyup)="searchItem($event)"
+         required>
+      </div>
+    </div>
+  </div>
+  <table class="table">
+      <thead>
+        <tr>
+          <th scope="col" >#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Price</th>
+          <th scope="col">Description</th>
+          <th scope="col">Category</th>
+          <th scope="col">Available_Quantity</th>
+          <th scope="col">Discount</th>
+          <th scope="col">Date</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of UserItem">
+          <th scope="row" >{{user.product_id}}</th>
+          <td>{{user.name || user.username}}  </td>
+          <td>{{UserItem.UserItem_price}}</td>
+          <td>{{UserItem.UserItem_description}}</td>
+          <td>{{UserItem.UserItem_category}}</td>
+          <td>{{UserItem.available_quantity}}</td>
+          <td>{{UserItem.percentage_discount}}%</td>
+          <td>{{UserItem.online_date}}</td>
+          <td><button class="btn btn-info">Edit</button></td>
+          <td><button class="btn btn-danger" (click)="delete(user._id)">Delete</button></td>
+        </tr>
+        
+      </tbody>
+    </table>

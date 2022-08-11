@@ -9,6 +9,7 @@ export class AdminService {
   Products:any=''
 
   constructor(public http:HttpClient,public router:Router) { }
+ 
   ImageAdd(formdata:any){
   //  const headers= new HttpHeaders({ 'Content-Type': 'multipart/formdata' })
     this.http.post(`https://api.cloudinary.com/v1_1/dg0vog2t7/upload`,formdata)
@@ -48,6 +49,8 @@ export class AdminService {
   }
   GetProducts=()=>this.http.get(`http://localhost:8000/admin/getproduct`)
   GetProducts2=(category:any)=>this.http.get(`http://localhost:8000/admin/getproduct/${category}`)
+  GetUsers=()=> this.http.get(`http://localhost:8000/admin/getuser`)
+  
   
       
 
