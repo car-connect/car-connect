@@ -131,12 +131,24 @@ a
     height: 200px;
     width: 280px;
 }
-/* .card1{
+.card1{
     display: flex;
 }
-@media (max-width: 700px) {
+/* @media (max-width: 700px) {
     .card1{
         display: block;
+    }
+
+} */
+/* @media (max-width: 1080px) {
+    .card1{
+        margin: 40px;
+    }
+
+}
+@media (max-width: 880px) {
+    .card1{
+        margin: 60px;
     }
 
 } */

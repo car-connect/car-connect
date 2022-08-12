@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { take, map } from 'rxjs/operators';
@@ -12,23 +13,24 @@ export class CartService {
 
 
 
-  constructor() {}
+  constructor(public http:HttpClient) {}
    getProducts=()=> this.productList.asObservable();
    setProducts=(product:any)=> {
     this.cartItemList.push(...product);
     this.productList.next(product)
    }
    addtoCart=(product:any)=>{
-    this.cartItemList.push(product);
-    this.productList.next(this.cartItemList)
-    this.getProducts();
-    console.log(this.cartItemList);
+     this.cartItemList.push(product);
+     this.productList.next(this.cartItemList)
+     this.getProducts();
+     console.log(this.cartItemList);
+     this.http.post(`http://localhost:8000/admin/addtocart`,this.cartItemList)
     
    }
    getTotalPrice() : number{
-    let grandTotal = 0;
+    let grandTotal:number = 0;
     this.cartItemList.map((a:any)=>{
-      grandTotal += a.total;
+      grandTotal = (Number(grandTotal) +Number(a.product_price));
     })
     return grandTotal;
   }

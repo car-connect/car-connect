@@ -27,11 +27,13 @@
             <span style="color: white;">{{totalItem}}</span>
           </li> -->
           <li style="margin-top: 20px;">
+            <a routerLink="cart">
 
             <span class="fa-stack fa-2x has-badge"  id={{totalItem}}>
               <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
               <i  class="fa fa-shopping-cart fa-stack-2x red-cart"></i>
             </span>
+          </a>
           </li>
             <li class="nav-item">
             <a class="nav-link" routerLink="profile"> <img style="height: 50px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ07K3Jo3Bquvk8hiYHZ8iJn-Shw8j8DPaDTtHbVbVCZQ&s" alt=""></a>
@@ -49,6 +51,12 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" routerLink="/adminhome/manageproduct">MANAGE PRODUCT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/adminhome/manageproduct">MANAGE USER</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/adminhome/manageproduct">LOGOUT</a>
           </li>
         
         </ul>

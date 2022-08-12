@@ -13,18 +13,22 @@ export class ProductsComponent implements OnInit {
   public productList : any ;
   public filterCategory : any
   searchKey:string ="";
+  category:any=''
   constructor(public admin:AdminService,private actRoute:ActivatedRoute,public cartService:CartService) { }
 
 
 
-  
+  addtocart(item: any){
+    this.cartService.addtoCart(item);
+  }
 
   ngOnInit(): void {
-     this.admin.GetProducts()
-    .subscribe(res=>{
-      console.log(res);
-      
-      this.productList = res;
+    this.category=this.actRoute.snapshot.params['category']
+    this.admin.GetProducts2(this.category).subscribe((res:any)=>{
+      this.productList=res
+
+
+    // })
     //   this.filterCategory = res;
     //   this.productList.forEach((a:any) => {
     //     if(a.category ==="women's clothing" || a.category ==="men's clothing"){
@@ -39,9 +43,7 @@ export class ProductsComponent implements OnInit {
     //   this.searchKey = val;
     })
   }
-  addtocart(item: any){
-    this.cartService.addtoCart(item);
-  }
+  
   // filter(category:string){
   //   this.filterCategory = this.productList
   //   .filter((a:any)=>{

@@ -9,7 +9,7 @@ import { AdminService } from 'src/app/services/admin.service';
 })
 export class AdminmanageproductComponent implements OnInit {
   products:any=''
-  ProductItem:any=''
+  ProductItem:any=[]
   search:any=''
   searchItem(val:any){
     this.search=val.target.value
@@ -26,8 +26,10 @@ export class AdminmanageproductComponent implements OnInit {
   }
 
   constructor(public admin:AdminService) { }
-  delete(id:any){
-    this.admin.deleteProduct(id)
+  delete(product:any){
+    this.admin.deleteProduct(product._id)
+    this.ProductItem=this.products.filter((result:any)=>result !=product)
+
   }
   
     

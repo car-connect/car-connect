@@ -19,7 +19,7 @@ a
 }
 .product-card {
     width: 300px;
-    position: relative;
+    /* position: relative; */
     box-shadow: 0 2px 7px #dfdfdf;
     margin: 50px auto;
     background: #fafafa;
@@ -131,10 +131,10 @@ a
     height: 200px;
     width: 280px;
 }
-/* .card1{
+.card1{
     display: flex;
 }
-@media (max-width: 700px) {
+/* @media (max-width: 700px) {
     .card1{
         display: block;
     }

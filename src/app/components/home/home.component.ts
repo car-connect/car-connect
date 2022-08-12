@@ -13,7 +13,15 @@ export class HomeComponent implements OnInit {
 
   constructor(public http:HttpClient,public users:UserService,public admin:AdminService) { }
   username:any=''
-  products:any=''
+  products:any=[
+    {
+      product_category:"Bike"
+    },
+    {
+      product_category:"Car"
+    },
+
+  ]
   user(){
     
     this.users.home()
@@ -29,7 +37,7 @@ export class HomeComponent implements OnInit {
     this.user()
     this.UserInfo()
     this.admin.GetProducts().subscribe((res:any)=>{
-      this.products=res
+      // this.products=res
     })
 
   }
