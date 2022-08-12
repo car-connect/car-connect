@@ -10,21 +10,57 @@ import { Product } from './type';
 export class CartService {
   public cartItemList:any=[];
   public productList=new BehaviorSubject<any>([]);
+  check:any=''
 
 
 
   constructor(public http:HttpClient) {}
-   getProducts=()=> this.productList.asObservable();
+   //getProducts=()=> this.productList.asObservable();
+   getProducts=()=>{
+    let user=localStorage.getItem('user')
+
+    return this.http.get(`http://localhost:8000/user/getcart/${user}`)
+   }
    setProducts=(product:any)=> {
     this.cartItemList.push(...product);
     this.productList.next(product)
    }
+    containsObject=(product:any, cartItemList:any)=> {
+    var i;
+    for (i = 0; i < cartItemList.length; i++) {
+        if (cartItemList[i]._id === product._id) {
+            return true;
+        }
+    }
+
+    return false;
+}
    addtoCart=(product:any)=>{
-     this.cartItemList.push(product);
-     this.productList.next(this.cartItemList)
-     this.getProducts();
-     console.log(this.cartItemList);
-     this.http.post(`http://localhost:8000/admin/addtocart`,this.cartItemList)
+     this.check= this.containsObject(product,this.cartItemList)
+     console.log(this.check);
+     if(this.check==false){
+
+       this.cartItemList.push(product);
+       this.productList.next(this.cartItemList)
+       this.getProducts();
+       let user=localStorage.getItem('user')
+       this.http.post(`http://localhost:8000/user/addtocart`,{cart:this.cartItemList,user:user}).subscribe((data)=>{
+        console.log(data);
+        
+       })
+     }
+     else if(this.check==true){
+      // let user=localStorage.getItem('user')
+
+      // this.http.post(`http://localhost:8000/user/addtocart`,{cart:product,user:user}).subscribe((data)=>{
+      //   console.log(data);
+        
+      //  })
+      console.log("same product carted");
+      
+      
+     }
+     
     
    }
    getTotalPrice() : number{

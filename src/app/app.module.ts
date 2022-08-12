@@ -28,6 +28,7 @@ import { EditprofileComponent } from './components/editprofile/editprofile.compo
 import { Error404Component } from './components/error404/error404.component';
 import { AdminmanageuserComponent } from './components/adminmanageuser/adminmanageuser.component';
 import { LocationComponent } from './components/location/location.component';
+import { SingleproductComponent } from './components/singleproduct/singleproduct.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { LocationComponent } from './components/location/location.component';
     EditprofileComponent,
     Error404Component,
     AdminmanageuserComponent,
-    LocationComponent
+    LocationComponent,
+    SingleproductComponent
   ],
   imports: [
     BrowserModule,

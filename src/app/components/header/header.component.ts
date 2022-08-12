@@ -15,6 +15,7 @@ export class HeaderComponent implements OnInit {
   }
  
   delToken(){
+    this.cartService.removeAllCart()
     localStorage.clear()
     localStorage.setItem('header','out')
     this.router.navigate(["login"])
@@ -22,8 +23,8 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.cartService.getProducts()
-    .subscribe(res=>{
-      this.totalItem = res.length;
+    .subscribe((res:any)=>{
+      this.totalItem = res.products.length;
       
     })
   }

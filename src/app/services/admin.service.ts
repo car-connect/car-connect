@@ -47,9 +47,10 @@ export class AdminService {
       
     })
   }
-  GetProducts=()=>this.http.get(`http://localhost:8000/admin/getproduct`)
-  GetProducts2=(category:any)=>this.http.get(`http://localhost:8000/admin/getproduct/${category}`)
+  GetProducts=()=>this.http.get(`http://localhost:8000/user/getproduct`)
+  GetProducts2=(category:any)=>this.http.get(`http://localhost:8000/user/getproduct/${category}`)
   GetUsers=()=> this.http.get(`http://localhost:8000/admin/getuser`)
+  GetProduct=(id:any)=>this.http.get(`http://localhost:8000/user/product/${id}`)
   
   
       

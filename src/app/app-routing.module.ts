@@ -19,6 +19,7 @@ import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { CartComponent } from './components/cart/cart.component';
 import { EditprofileComponent } from './components/editprofile/editprofile.component';
 import { AdminmanageuserComponent } from './components/adminmanageuser/adminmanageuser.component';
+import { SingleproductComponent } from './components/singleproduct/singleproduct.component';
 
 
 const routes: Routes = [
@@ -34,6 +35,7 @@ const routes: Routes = [
   ]},
   {path:'cart',component:CartComponent},
   {path:"products/:category",component:ProductsComponent},
+  {path:'product/:id',component:SingleproductComponent},
   {path:"placeorder", component:PlaceOrderComponent},
   {path:"admin",component:AdminLoginComponent},
   {path:"adminhome",

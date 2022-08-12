@@ -17,7 +17,7 @@
           </li>
         
         </ul>
-        <ul class="navbar-nav" *ngIf="token()=='user'">
+        <ul class="navbar-nav " *ngIf="token()=='user'">
           <!-- <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li> -->
@@ -39,7 +39,7 @@
             <a class="nav-link" routerLink="profile"> <img style="height: 50px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ07K3Jo3Bquvk8hiYHZ8iJn-Shw8j8DPaDTtHbVbVCZQ&s" alt=""></a>
           </li>
           <li class="nav-item" >
-            <a class="nav-link" (click)="delToken()"><img style="height: 50px;"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrFlL3dFCf09pCOtuY_GEGTGm2FeUvaSt4GQ&usqp=CAU" alt=""></a>
+            <a class="nav-link" (click)="delToken()"><i class="fa fa-power-off" style="font-size:36px;color:white;margin-top: 5px;"></i></a>
           </li>
         </ul>
         <ul class="navbar-nav" *ngIf="token()=='admin'">
