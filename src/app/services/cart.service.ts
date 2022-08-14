@@ -43,6 +43,8 @@ export class CartService {
        this.cartItemList.push(product);
        this.productList.next(this.cartItemList)
        this.getProducts();
+       console.log(this.cartItemList);
+       
        let user=localStorage.getItem('user')
        this.http.post(`http://localhost:8000/user/addtocart`,{cart:this.cartItemList,user:user}).subscribe((data)=>{
         console.log(data);

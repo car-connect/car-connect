@@ -46,9 +46,15 @@
     <div class="form-group">
       <label class="col-md-4 control-label" for="product_categorie">PRODUCT CATEGORY</label>
       <div class="col-md-4">
-        <input id="product_categorie" name="product_category" class="form-control" [(ngModel)]="Product.product_category">
-        <!-- <select id="product_categorie" name="product_category" class="form-control" [(ngModel)]="Product.product_category"> -->
-        <!-- </select> -->
+        <!-- <input id="product_categorie" name="product_category" class="form-control" [(ngModel)]="Product.product_category"> -->
+        <select id="product_categorie" name="product_category" class="form-control" [(ngModel)]="Product.product_category">
+          <option value="Interior Accessories">Interior Accessories</option>
+          <option value="Exterior Accessories">Exterior Accessories</option>
+          <option value="Car Care">Car Care</option>
+          <option value="Audio System">Audio System</option>
+          <option value="Driving Comfort">Driving Comfort</option>
+          <option value="Wheel Accessories">Wheel Accessories</option>
+        </select>
       </div>
     </div>
     

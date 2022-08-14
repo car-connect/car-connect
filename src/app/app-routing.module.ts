@@ -23,7 +23,7 @@ import { SingleproductComponent } from './components/singleproduct/singleproduct
 
 
 const routes: Routes = [
-  {path:'',canActivate:[UserGuard],component:HomeComponent},
+  {path:'',component:HomeComponent},
   {path:"login",component:LoginComponent},
   {path:"signup",component:SignupComponent},
   {path:"signupauth",component:SignupAuthComponent},
@@ -41,10 +41,14 @@ const routes: Routes = [
   {path:"adminhome",
   canActivate:[AdminGuardGuard],
   component:AdminHomeComponent},
-  {path:"adminhome/addproduct",component:AdminaddproductComponent},
-  {path:"adminhome/manageproduct", component:AdminmanageproductComponent},
-  {path:"adminhome/editproduct",component:ModalsComponent},
-  {path:"adminhome/manageuser",component:AdminmanageuserComponent}
+  {path:"adminhome/addproduct",
+  canActivate:[AdminGuardGuard],component:AdminaddproductComponent},
+  {path:"adminhome/manageproduct",
+  canActivate:[AdminGuardGuard], component:AdminmanageproductComponent},
+  {path:"adminhome/editproduct",
+  canActivate:[AdminGuardGuard],component:ModalsComponent},
+  {path:"adminhome/manageuser",
+  canActivate:[AdminGuardGuard],component:AdminmanageuserComponent}
 ];
 
 @NgModule({

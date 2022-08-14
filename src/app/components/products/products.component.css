@@ -152,3 +152,10 @@ a
     }
 
 } */
+
+
+.text-center{
+    font-family: 'DynaPuff', cursive;
+    font-size: 48px;
+    color: rgb(93, 102, 102);
+}

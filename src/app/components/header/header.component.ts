@@ -20,6 +20,11 @@ export class HeaderComponent implements OnInit {
     localStorage.setItem('header','out')
     this.router.navigate(["login"])
   }
+  logout(){
+    localStorage.setItem('header','out')
+    localStorage.removeItem('token')
+
+  }
 
   ngOnInit(): void {
     this.cartService.getProducts()

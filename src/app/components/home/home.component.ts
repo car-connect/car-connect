@@ -15,10 +15,22 @@ export class HomeComponent implements OnInit {
   username:any=''
   products:any=[
     {
-      product_category:"Bike"
+      product_category:"Interior Accessories"
     },
     {
-      product_category:"Car"
+      product_category:"Exterior Accessories"
+    },
+    {
+      product_category:"Car Care"
+    },
+    {
+      product_category:"Audio System"
+    },
+    {
+      product_category:"Driving Comfort"
+    },
+    {
+      product_category:"Wheel Accessories"
     },
 
   ]

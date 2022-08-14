@@ -1,4 +1,74 @@
-<div class="card1 row">
+<div class="main ">
+    <h1 class="text-center m-2"> Most popular Categories</h1>
+  <ul class="cards"  >
+    
+    <li class="cards_item ">
+      <div class="card">
+        <div class="card_image"><img src="https://picsum.photos/500/300/?image=2"></div>
+        <div class="card_content">
+          <h2 class="card_title">{{products[0].product_category}}</h2>
+          <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
+          <button class="btn card_btn"><a routerLink="/products/{{products[0].product_category}}">SHOP NOW</a></button>
+        </div>
+      </div>
+    </li>
+    <li class="cards_item ">
+      <div class="card">
+        <div class="card_image"><img src="https://picsum.photos/500/300/?image=2"></div>
+        <div class="card_content">
+          <h2 class="card_title">{{products[1].product_category}}</h2>
+          <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
+          <button class="btn card_btn"><a routerLink="/products/{{products[1].product_category}}">SHOP NOW</a></button>
+
+        </div>
+      </div>
+    </li>
+    <li class="cards_item ">
+      <div class="card">
+        <div class="card_image"><img src="https://picsum.photos/500/300/?image=2"></div>
+        <div class="card_content">
+          <h2 class="card_title">{{products[2].product_category}}</h2>
+          <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
+          <button class="btn card_btn"><a routerLink="/products/{{products[2].product_category}}">SHOP NOW</a></button>
+        </div>
+      </div>
+    </li>
+    <li class="cards_item ">
+      <div class="card">
+        <div class="card_image"><img src="https://picsum.photos/500/300/?image=2"></div>
+        <div class="card_content">
+          <h2 class="card_title">{{products[3].product_category}}</h2>
+          <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
+          <button class="btn card_btn"><a routerLink="/products/{{products[3].product_category}}">SHOP NOW</a></button>
+        </div>
+      </div>
+    </li>
+    <li class="cards_item ">
+      <div class="card">
+        <div class="card_image"><img src="https://picsum.photos/500/300/?image=2"></div>
+        <div class="card_content">
+          <h2 class="card_title">{{products[4].product_category}}</h2>
+          <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
+          <button class="btn card_btn"><a routerLink="/products/{{products[4].product_category}}">SHOP NOW</a></button>
+        </div>
+      </div>
+    </li>
+    <li class="cards_item ">
+      <div class="card">
+        <div class="card_image"><img src="https://picsum.photos/500/300/?image=2"></div>
+        <div class="card_content">
+          <h2 class="card_title">{{products[5].product_category}}</h2>
+          <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
+          <button class="btn card_btn"><a routerLink="/products/{{products[5].product_category}}">SHOP NOW</a></button>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+
+<!-- <div class="card1 row">
+    <h1 class="text-center">Most popularCategories</h1>
 <div class="product-card float-left" *ngFor="let product of products">
 		
     <div class="product-tumb">
@@ -7,7 +77,6 @@
     <div class="product-details">
         <span class="product-catagory"></span>
         <h4><a routerLink="/products/{{product.product_category}}">{{product.product_category}} </a></h4>
-        <p>scredriver</p>
         <div class="product-bottom-details">
             
             <div class="product-links">
@@ -17,4 +86,4 @@
         </div>
     </div>
 </div>
-</div>
+</div> -->
