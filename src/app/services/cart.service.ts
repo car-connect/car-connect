@@ -10,12 +10,18 @@ import { Product } from './type';
 export class CartService {
   public cartItemList:any=[];
   public productList=new BehaviorSubject<any>([]);
+  public countWish:number=0;
   check:any=''
 
 
 
   constructor(public http:HttpClient) {}
-   //getProducts=()=> this.productList.asObservable();
+   getProducts1=()=> {
+    this.productList.asObservable().subscribe((res:any)=>{
+      this.countWish=res.length
+    })
+    return  this.productList.asObservable()
+   }
    getProducts=()=>{
     let user=localStorage.getItem('user')
 
@@ -43,6 +49,7 @@ export class CartService {
        this.cartItemList.push(product);
        this.productList.next(this.cartItemList)
        this.getProducts();
+       this.getProducts1()
        console.log(this.cartItemList);
        
        let user=localStorage.getItem('user')
@@ -79,10 +86,20 @@ export class CartService {
       }
     })
     this.productList.next(this.cartItemList);
+    console.log(product);
+    let user=localStorage.getItem('user')
+    
+   return this.http.post(`http://localhost:8000/user/deletecartproduct/${user}`,this.cartItemList)
   }
   removeAllCart(){
     this.cartItemList = []
     this.productList.next(this.cartItemList);
+    let user=localStorage.getItem('user')
+    this.http.delete(`http://localhost:8000/user/deletecart/${user}`).subscribe((res:any)=>{
+      console.log(res);
+      
+  
+     })
   }
 
    

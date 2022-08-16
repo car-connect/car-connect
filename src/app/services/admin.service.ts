@@ -9,7 +9,8 @@ export class AdminService {
   Products:any=''
 
   constructor(public http:HttpClient,public router:Router) { }
- 
+  UserDetails=(user:any)=>   this.http.get(`http://localhost:8000/user/details/${user}`)
+  
   ImageAdd(formdata:any){
   //  const headers= new HttpHeaders({ 'Content-Type': 'multipart/formdata' })
     this.http.post(`https://api.cloudinary.com/v1_1/dg0vog2t7/upload`,formdata)

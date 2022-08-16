@@ -59,10 +59,10 @@
             </div>
         </div>
         <div class="px-3 my-3 text-center">
-            <div class="cart-item-label">Subtotal</div><span class="text-xl font-weight-medium">{{product.product_price}}</span>
+            <div class="cart-item-label">Subtotal</div><span class="text-xl font-weight-medium">&#x20b9;{{product.product_price}}</span>
         </div>
         <div class="px-3 my-3 text-center">
-            <div class="cart-item-label">Discount</div><span class="text-xl font-weight-medium">{{(product.product_price*product.percentage_discount)/100}}</span>
+            <div class="cart-item-label">Discount</div><span class="text-xl font-weight-medium">&#x20b9;{{(product.product_price*product.percentage_discount)/100}}</span>
         </div>
     </div>
 </div>
@@ -73,15 +73,15 @@
         <form class="form-inline py-2">
             <!-- <label class="sr-only">Coupon code</label> -->
             <!-- <input class="form-control form-control-sm my-2 mr-3" type="text" placeholder="Coupon code" required=""> -->
-            <button class="btn btn-style-1 btn-secondary btn-sm my-2 mx-auto mx-sm-0" type="submit">Assist a Mechanic</button>
+           <a routerLink="/location"><button class="btn btn-style-1 btn-secondary btn-sm my-2 mx-auto mx-sm-0" type="submit">Assist a Mechanic</button></a> 
         </form>
-        <div class="py-2"><span class="d-inline-block align-middle text-sm text-muted font-weight-medium text-uppercase mr-2">Subtotal:</span><span class="d-inline-block align-middle text-xl font-weight-medium">{{grandTotal}}</span></div>
+        <div class="py-2"><span class="d-inline-block align-middle text-sm text-muted font-weight-medium text-uppercase mr-2">Subtotal:</span><span class="d-inline-block align-middle text-xl font-weight-medium">&#x20b9;{{grandTotal}}</span></div>
     </div>
     <!-- Buttons-->
     <hr class="my-2">
     <div class="row pt-3 pb-5 mb-2">
         <div class="col-sm-6 mb-3"><a class="btn btn-style-1 btn-secondary btn-block" (click)="emptycart()"><i class="fe-icon-refresh-ccw"></i>&nbsp;Remove Cart</a></div>
-        <div class="col-sm-6 mb-3"><a class="btn btn-style-1 btn-primary btn-block" href="checkout-address.html"><i class="fe-icon-credit-card"></i>&nbsp;Checkout</a></div>
+        <div class="col-sm-6 mb-3"><a class="btn btn-style-1 btn-primary btn-block" routerLink="/placeorder"><i class="fe-icon-credit-card"></i>&nbsp;Checkout</a></div>
     </div>
 
        

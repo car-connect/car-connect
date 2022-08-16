@@ -20,6 +20,8 @@ import { CartComponent } from './components/cart/cart.component';
 import { EditprofileComponent } from './components/editprofile/editprofile.component';
 import { AdminmanageuserComponent } from './components/adminmanageuser/adminmanageuser.component';
 import { SingleproductComponent } from './components/singleproduct/singleproduct.component';
+import { OrdersuccessComponent } from './components/ordersuccess/ordersuccess.component';
+import { LocationComponent } from './components/location/location.component';
 
 
 const routes: Routes = [
@@ -34,9 +36,11 @@ const routes: Routes = [
     {path:"editprofile",component:EditprofileComponent},
   ]},
   {path:'cart',component:CartComponent},
+  {path:'location',component:LocationComponent},
   {path:"products/:category",component:ProductsComponent},
   {path:'product/:id',component:SingleproductComponent},
   {path:"placeorder", component:PlaceOrderComponent},
+  {path:"ordersuccess",component:OrdersuccessComponent},
   {path:"admin",component:AdminLoginComponent},
   {path:"adminhome",
   canActivate:[AdminGuardGuard],

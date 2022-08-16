@@ -45,7 +45,6 @@ export class HomeComponent implements OnInit {
   
 
   ngOnInit(): void {
-    localStorage.setItem('header','user')
     this.user()
     this.UserInfo()
     this.admin.GetProducts().subscribe((res:any)=>{

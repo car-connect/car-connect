@@ -15,6 +15,10 @@ product:any=''
   addtocart(item: any){
     this.cartService.addtoCart(item);
   }
+  er(){
+    return localStorage.getItem('header')
+    
+  }
   ngOnInit(): void {
     this.id=this.actRoute.snapshot.params['id']
     this.admin.GetProduct(this.id).subscribe((res:any)=>{

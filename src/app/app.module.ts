@@ -29,6 +29,7 @@ import { Error404Component } from './components/error404/error404.component';
 import { AdminmanageuserComponent } from './components/adminmanageuser/adminmanageuser.component';
 import { LocationComponent } from './components/location/location.component';
 import { SingleproductComponent } from './components/singleproduct/singleproduct.component';
+import { OrdersuccessComponent } from './components/ordersuccess/ordersuccess.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { SingleproductComponent } from './components/singleproduct/singleproduct
     Error404Component,
     AdminmanageuserComponent,
     LocationComponent,
-    SingleproductComponent
+    SingleproductComponent,
+    OrdersuccessComponent
   ],
   imports: [
     BrowserModule,

@@ -13,6 +13,7 @@ export class CartComponent implements OnInit {
   constructor(public cart:CartService) { }
 
   ngOnInit(): void {
+    this.cart.getProducts1()
     this.cart.getProducts()
    .subscribe((res:any)=>{
      this.ProductList = res.products;
@@ -22,7 +23,16 @@ export class CartComponent implements OnInit {
 
   }
   removeItem(item: any){
-    this.cart.removeCartItem(item);
+    console.log("item",item);
+    
+    this.cart.removeCartItem(item).subscribe((res:any)=>{
+      console.log(res);
+      this.cart.getProducts()
+   .subscribe((res:any)=>{
+     this.ProductList = res.products;
+     this.grandTotal = this.cart.getTotalPrice();
+   })
+     })
   }
   emptycart(){
     this.cart.removeAllCart();

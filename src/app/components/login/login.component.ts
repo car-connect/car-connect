@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit {
     if(message.data.user){
       localStorage.setItem("token",message.data.token);
       localStorage.setItem("user",message.data.user.username)
+      localStorage.setItem('header','user')
       this.router.navigate([""])
     }
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CartService } from 'src/app/services/cart.service';
+import { WishlistService } from 'src/app/services/wishlist.service';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,13 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class HeaderComponent implements OnInit {
   public totalItem : number = 0;
-  constructor(public router:Router , public cartService:CartService) { }
+  constructor(public router:Router , public cartService:CartService) {
+   this.totalItem= this.cartService.countWish
+    // .subscribe((res:any)=>{
+    //   this.totalItem = res.products.length;
+      
+    // })
+   }
   token(){
    return localStorage.getItem("header")
   }
@@ -25,13 +32,11 @@ export class HeaderComponent implements OnInit {
     localStorage.removeItem('token')
 
   }
+  
 
   ngOnInit(): void {
-    this.cartService.getProducts()
-    .subscribe((res:any)=>{
-      this.totalItem = res.products.length;
-      
-    })
+   
+    
   }
 
 }

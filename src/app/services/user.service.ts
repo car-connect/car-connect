@@ -63,6 +63,7 @@ export class UserService {
       if(res.message=='authenticated'){
         localStorage.setItem("token",res.token)
         localStorage.setItem("user",res.user.username)
+        localStorage.setItem('header','user')
         this.router.navigate([''])
       }
       else{

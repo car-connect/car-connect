@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AdminService } from 'src/app/services/admin.service';
 import { CartService } from 'src/app/services/cart.service';
+import { WishlistService } from 'src/app/services/wishlist.service';
 
 @Component({
   selector: 'app-products',
@@ -14,9 +15,20 @@ export class ProductsComponent implements OnInit {
   public filterCategory : any
   searchKey:string ="";
   category:any=''
-  constructor(public admin:AdminService,private actRoute:ActivatedRoute,public cartService:CartService) { }
+  constructor(public admin:AdminService,private actRoute:ActivatedRoute,public cartService:CartService,public wishService:WishlistService) { }
 
 
+  addtowish(item:any){
+    this.wishService.addtoCart(item).subscribe((res:any)=>{
+      console.log(res);
+      
+    })
+
+  }
+  er(){
+    return localStorage.getItem('header')
+    
+  }
 
   addtocart(item: any){
     this.cartService.addtoCart(item);
