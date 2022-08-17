@@ -22,6 +22,8 @@ product:any=''
   ngOnInit(): void {
     this.id=this.actRoute.snapshot.params['id']
     this.admin.GetProduct(this.id).subscribe((res:any)=>{
+      console.log("r",res);
+      
       this.product=res
 
     })

@@ -37,6 +37,10 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
 import { provideFirebaseApp } from '@angular/fire/app';
 import { initializeApp } from 'firebase/app';
 import { environment } from 'src/environments/environment';
+import { ContactusComponent } from './components/contactus/contactus.component';
+import { AboutusComponent } from './components/aboutus/aboutus.component';
+import { PrivacyComponent } from './components/privacy/privacy.component';
+import { PurchaseComponent } from './components/purchase/purchase.component';
 
 
 @NgModule({
@@ -64,7 +68,11 @@ import { environment } from 'src/environments/environment';
     AdminmanageuserComponent,
     LocationComponent,
     SingleproductComponent,
-    OrdersuccessComponent
+    OrdersuccessComponent,
+    ContactusComponent,
+    AboutusComponent,
+    PrivacyComponent,
+    PurchaseComponent
   ],
   imports: [
     BrowserModule,

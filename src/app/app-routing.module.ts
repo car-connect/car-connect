@@ -22,6 +22,10 @@ import { AdminmanageuserComponent } from './components/adminmanageuser/adminmana
 import { SingleproductComponent } from './components/singleproduct/singleproduct.component';
 import { OrdersuccessComponent } from './components/ordersuccess/ordersuccess.component';
 import { LocationComponent } from './components/location/location.component';
+import { ContactusComponent } from './components/contactus/contactus.component';
+import { AboutusComponent } from './components/aboutus/aboutus.component';
+import { PrivacyComponent } from './components/privacy/privacy.component';
+import { PurchaseComponent } from './components/purchase/purchase.component';
 
 
 const routes: Routes = [
@@ -41,6 +45,10 @@ const routes: Routes = [
   {path:'product/:id',component:SingleproductComponent},
   {path:"placeorder", component:PlaceOrderComponent},
   {path:"ordersuccess",component:OrdersuccessComponent},
+  {path:'contactus',component:ContactusComponent},
+  {path:"aboutus",component:AboutusComponent},
+  {path:"privacy",component:PrivacyComponent},
+  {path:"purchase",component:PurchaseComponent},
   {path:"admin",component:AdminLoginComponent},
   {path:"adminhome",
   canActivate:[AdminGuardGuard],

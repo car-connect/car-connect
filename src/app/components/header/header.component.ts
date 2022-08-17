@@ -17,12 +17,15 @@ export class HeaderComponent implements OnInit {
       
     // })
    }
+   addproduct(){
+    localStorage.setItem('operation','add')
+   }
   token(){
    return localStorage.getItem("header")
   }
  
   delToken(){
-    this.cartService.removeAllCart()
+    // this.cartService.removeAllCart()
     localStorage.clear()
     localStorage.setItem('header','out')
     this.router.navigate(["login"])
