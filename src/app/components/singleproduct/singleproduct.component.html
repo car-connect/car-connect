@@ -31,8 +31,8 @@
                       {{product.product_description}}
                   </p>
                   <div class="product_meta">
-                      <span class="posted_in"> <strong>Categories:</strong> <a rel="tag" href="#">Jackets</a>, <a rel="tag" href="#">Men</a>, <a rel="tag" href="#">Shirts</a>, <a rel="tag" href="#">T-shirt</a>.</span>
-                      <span class="tagged_as"><strong>Tags:</strong> <a rel="tag" href="#">mens</a>, <a rel="tag" href="#">womens</a>.</span>
+                      <!-- <span class="posted_in"> <strong>Categories:</strong> <a rel="tag" href="#">Jackets</a>, <a rel="tag" href="#">Men</a>, <a rel="tag" href="#">Shirts</a>, <a rel="tag" href="#">T-shirt</a>.</span> -->
+                      <span class="tagged_as"><strong>Posted On:</strong>{{product.online_date}}</span>
                   </div>
                   <div class="m-bot15"> <strong>Price : </strong> <span class="amount-old">&#x20B9;{{product.product_price}}</span>  <span class="pro-price">&#x20B9;{{(product.product_price-(product.product_price*product.percentage_discount)/100)}}</span></div>
                   <div class="form-group">

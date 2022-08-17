@@ -38,6 +38,9 @@ export class HeaderComponent implements OnInit {
   
 
   ngOnInit(): void {
+    this.cartService.getProducts1().subscribe((res:any)=>{
+      this.totalItem=res.products.length
+    })
    
     
   }

@@ -15,6 +15,13 @@ export class PlaceOrderComponent implements OnInit {
   createdAt:any=''
   constructor(public cart:CartService,public adminService:AdminService) { }
 
+  placeorder(){
+    let date=Date.now()
+    this.cart.placeorder({cart:this.cartItems,time:date}).subscribe((res)=>{
+      console.log(res);
+      
+    })
+  }
   ngOnInit(): void {
     this.cart.getProducts().subscribe((res:any)=>{
       this.cartItems=res.products
@@ -28,5 +35,6 @@ export class PlaceOrderComponent implements OnInit {
     })
 
   }
+
 
 }

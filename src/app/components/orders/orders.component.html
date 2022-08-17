@@ -22,20 +22,20 @@
                     <th>Total</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
+            <tbody *ngFor="let item of orders.products">
+                <!-- <tr>
                     <td><a class="navi-link" href="#order-details" data-toggle="modal">78A643CD409</a></td>
                     <td>August 08, 2017</td>
                     <td><span class="badge badge-danger m-0">Canceled</span></td>
                     <td><span>$760.50</span></td>
-                </tr>
+                </tr> -->
                 <tr>
-                    <td><a class="navi-link" href="#order-details" data-toggle="modal">34VB5540K83</a></td>
-                    <td>July 21, 2017</td>
+                    <td><a class="navi-link" href="#order-details" data-toggle="modal">{{item.product_name}}</a></td>
+                    <td>{{orders.time}}</td>
                     <td><span class="badge badge-info m-0">In Progress</span></td>
-                    <td>$315.20</td>
+                    <td>&#x20B9;{{item.product_price}}</td>
                 </tr>
-                <tr>
+                <!-- <tr>
                     <td><a class="navi-link" href="#order-details" data-toggle="modal">112P45A90V2</a></td>
                     <td>June 15, 2017</td>
                     <td><span class="badge badge-warning m-0">Delayed</span></td>
@@ -58,7 +58,7 @@
                     <td>March 30, 2017</td>
                     <td><span class="badge badge-success m-0">Delivered</span></td>
                     <td>$86.40</td>
-                </tr>
+                </tr> -->
             </tbody>
         </table>
     </div>

@@ -101,6 +101,15 @@ export class CartService {
   
      })
   }
+  placeorder(item:any){
+    let user=localStorage.getItem('user')
+   return this.http.post(`http://localhost:8000/user/placeorder/${user}`,item)
+  }
+  getplaceorder(){
+    let user=localStorage.getItem('user')
+return this.http.get(`http://localhost:8000/user/getplaceorder/${user}`)
+
+  }
 
    
  

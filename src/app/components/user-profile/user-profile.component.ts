@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from 'src/app/services/admin.service';
+import { CartService } from 'src/app/services/cart.service';
 import { WishlistService } from 'src/app/services/wishlist.service';
 
 @Component({
@@ -12,8 +13,9 @@ export class UserProfileComponent implements OnInit {
   user:any=''
   createdAt:any=''
   public countWish:number=0;
+  public ordercount:number=0;
 
-  constructor(public adminService:AdminService,public Wish:WishlistService) { }
+  constructor(public adminService:AdminService,public Wish:WishlistService,public cart:CartService) { }
 
 
   ngOnInit(): void {
@@ -23,6 +25,11 @@ export class UserProfileComponent implements OnInit {
       this.createdAt=date.toDateString()
     })
    this.countWish= this.Wish.countWish
+   this.cart.getplaceorder().subscribe((res:any)=>{
+    this.ordercount=res.products.length
+   })
   }
+
+
 
 }
