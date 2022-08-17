@@ -48,6 +48,9 @@ export class AdminService {
       
     })
   }
+  productEDIT(item:any){
+  return  this.http.post(`http://localhost:8000/admin/editproduct/${item.Name}`,item.Product)
+  }
   GetProducts=()=>this.http.get(`http://localhost:8000/user/getproduct`)
   GetProducts2=(category:any)=>this.http.get(`http://localhost:8000/user/getproduct/${category}`)
   GetUsers=()=> this.http.get(`http://localhost:8000/admin/getuser`)

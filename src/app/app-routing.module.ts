@@ -47,6 +47,8 @@ const routes: Routes = [
   component:AdminHomeComponent},
   {path:"adminhome/addproduct",
   canActivate:[AdminGuardGuard],component:AdminaddproductComponent},
+  {path:"adminhome/addproduct/:product",
+  canActivate:[AdminGuardGuard],component:AdminaddproductComponent},
   {path:"adminhome/manageproduct",
   canActivate:[AdminGuardGuard], component:AdminmanageproductComponent},
   {path:"adminhome/editproduct",

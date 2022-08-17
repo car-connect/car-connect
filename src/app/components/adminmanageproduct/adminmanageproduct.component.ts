@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
@@ -25,11 +26,16 @@ export class AdminmanageproductComponent implements OnInit {
     })
   }
 
-  constructor(public admin:AdminService) { }
+  constructor(public admin:AdminService,private router:Router) { }
   delete(product:any){
     this.admin.deleteProduct(product._id)
     this.ProductItem=this.products.filter((result:any)=>result !=product)
 
+  }
+  update(product:any){
+    localStorage.setItem('operation','edit')
+    this.router.navigate([`/adminhome/addproduct/${product.product_name}`])
+    
   }
   
     

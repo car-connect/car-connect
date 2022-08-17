@@ -101,15 +101,16 @@
     <div class="form-group">
       <label class="col-md-4 control-label" for="filebutton">IMAGE</label>
       <div class="col-md-4">
-        <input id="filebutton" name="image" class="input-file" type="file" (change)="setImage($event)">
-        <h3 (click)="handleImage()">IMAGE</h3>
+        <input id="filebutton" name="image" class="input-file" type="file" (change)="change($event)" >
+        <a class="Btn-1" (click)="upload()">Upload</a>
       </div>
     </div>
     <!-- File Button --> 
     <div class="form-group">
       <label class="col-md-4 control-label" for="filebutton">auxiliary_images</label>
       <div class="col-md-4">
-        <input id="filebutton" name="image1" class="input-file" type="file">
+        <input id="filebutton" name="image1" class="input-file" type="file" (change)="change2($event)" multiple>
+        <p class="Btn-1" (click)="upload2()">upload</p>
       </div>
     </div>
     

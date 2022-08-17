@@ -1,0 +1,39 @@
+.Btn-1{
+    cursor: pointer;
+    margin-top: 10px;
+    display: inline-block;
+    text-decoration: none;
+    padding: 3px 16px;
+    color: antiquewhite;
+    border: 1px solid rgb(13, 169, 117);
+    overflow: hidden;position:relative;
+    transition: color .5s .25s;
+}
+.Btn-1::before,
+.Btn-1::after{
+    content: '';
+    position: absolute;
+    top: 0;width: 50%;height: 100%;
+    background-color: rgb(136, 127, 234);
+    z-index: -1;
+    transform: scaleX(0);
+    transition: transform .5s
+    cubic-bezier(.785,.135,.15,.86);
+
+}
+.Btn-1::before{
+    left: 0;
+    transform-origin: left;
+}
+.Btn-1::after{
+    right: 0;
+    transform-origin: right;
+}
+.Btn-1:hover::before,
+.Btn-1:hover::after{
+    transform: scaleX(1);
+}
+.Btn-1:hover{
+    color: rgb(241, 88, 88);
+    transition-delay: .5s;
+}
