@@ -15,6 +15,7 @@ export class AdminaddproductComponent  {
   files:any ;
   fileUrl = new Array;
   filesUrl = new Array;
+  productOne:any=''
 
 
   change(event:any){
@@ -53,6 +54,11 @@ export class AdminaddproductComponent  {
     let operation=localStorage.getItem('operation')
     if(operation=="edit"){
       let product=this.actRoute.snapshot.params['product']
+      // this.admin.GetProduct(product).subscribe((res:any)=>{
+      //   this.productOne=res
+
+      // })
+      
       this.admin.productEDIT({Name:product,Product:this.Product}).subscribe((res:any)=>{
         console.log(res);
         this.router.navigate(["adminhome/manageproduct"])

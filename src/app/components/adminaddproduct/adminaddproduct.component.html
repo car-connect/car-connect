@@ -6,12 +6,15 @@
     
     <!-- Form Name -->
     <legend>PRODUCTS</legend>
+
+              
+                <p class="text-right mr-5">  <a routerLink="/adminhome/manageproduct"class="btn btn-primary">Manage Products</a></p>
     
     <!-- Text input-->
     <div class="form-group">
       <label class="col-md-4 control-label" for="product_id">PRODUCT ID</label>  
       <div class="col-md-4">
-      <input id="product_id" name="product_id" placeholder="PRODUCT ID" class="form-control input-md" required="" type="text" [(ngModel)]="Product.product_id">
+      <input id="product_id" name="product_id" placeholder="PRODUCT ID" class="form-control input-md" required="" type="text" [(ngModel)]="Product.product_id" value="{{productOne.product_id}}">
         
       </div>
     </div>
@@ -20,7 +23,7 @@
     <div class="form-group">
       <label class="col-md-4 control-label" for="product_name">PRODUCT NAME</label>  
       <div class="col-md-4">
-      <input id="product_name" name="product_name" placeholder="PRODUCT NAME" class="form-control input-md" required="" type="text" [(ngModel)]="Product.product_name">
+      <input id="product_name" name="product_name" placeholder="PRODUCT NAME" class="form-control input-md" required="" type="text" [(ngModel)]="Product.product_name" value="{{productOne.product_name}}">
         
       </div>
     </div>
@@ -28,7 +31,7 @@
     <div class="form-group">
       <label class="col-md-4 control-label" for="product_price">PRODUCT PRICE</label>  
       <div class="col-md-4">
-      <input id="product_price" name="product_price" placeholder="PRODUCT PRICE" class="form-control input-md" required="" type="text" [(ngModel)]="Product.product_price">
+      <input id="product_price" name="product_price" placeholder="PRODUCT PRICE" class="form-control input-md" required="" type="text" [(ngModel)]="Product.product_price" value="{{productOne.product_name}}">
         
       </div>
     </div>
@@ -37,7 +40,7 @@
     <div class="form-group">
       <label class="col-md-4 control-label" for="product_name_fr">PRODUCT DESCRIPTION</label>  
       <div class="col-md-4">
-      <input id="product_name_fr" name="product_description" placeholder="PRODUCT DESCRIPTION" class="form-control input-md" required="" type="text" [(ngModel)]="Product.product_description">
+      <input id="product_name_fr" name="product_description" placeholder="PRODUCT DESCRIPTION" class="form-control input-md" required="" type="text" [(ngModel)]="Product.product_description" value="{{productOne.product_name}}">
         
       </div>
     </div>
@@ -47,7 +50,7 @@
       <label class="col-md-4 control-label" for="product_categorie">PRODUCT CATEGORY</label>
       <div class="col-md-4">
         <!-- <input id="product_categorie" name="product_category" class="form-control" [(ngModel)]="Product.product_category"> -->
-        <select id="product_categorie" name="product_category" class="form-control" [(ngModel)]="Product.product_category">
+        <select id="product_categorie" name="product_category" class="form-control" [(ngModel)]="Product.product_category" value="{{productOne.product_name}}">
           <option value="Interior Accessories">Interior Accessories</option>
           <option value="Exterior Accessories">Exterior Accessories</option>
           <option value="Car Care">Car Care</option>
@@ -62,7 +65,7 @@
     <div class="form-group">
       <label class="col-md-4 control-label" for="available_quantity">AVAILABLE QUANTITY</label>  
       <div class="col-md-4">
-      <input id="available_quantity" name="available_quantity" placeholder="AVAILABLE QUANTITY" class="form-control input-md" required="" type="text" [(ngModel)]="Product.available_quantity">
+      <input id="available_quantity" name="available_quantity" placeholder="AVAILABLE QUANTITY" class="form-control input-md" required="" type="text" [(ngModel)]="Product.available_quantity" value="{{productOne.product_name}}">
         
       </div>
     </div>
@@ -74,7 +77,7 @@
     <div class="form-group">
       <label class="col-md-4 control-label" for="percentage_discount">PERCENTAGE DISCOUNT</label>  
       <div class="col-md-4">
-      <input id="percentage_discount" name="percentage_discount" placeholder="PERCENTAGE DISCOUNT" class="form-control input-md" required="" type="text" [(ngModel)]="Product.percentage_discount">
+      <input id="percentage_discount" name="percentage_discount" placeholder="PERCENTAGE DISCOUNT" class="form-control input-md" required="" type="text" [(ngModel)]="Product.percentage_discount" value="{{productOne.product_name}}">
         
       </div>
     </div>
@@ -88,7 +91,7 @@
     <div class="form-group">
       <label class="col-md-4 control-label" for="online_date">UPLOAD DATE</label>  
       <div class="col-md-4">
-      <input id="online_date" name="online_date" placeholder="ONLINE DATE" class="form-control input-md" required="" type="text" [(ngModel)]="Product.online_date">
+      <input id="online_date" name="online_date" placeholder="ONLINE DATE" class="form-control input-md" required="" type="text" [(ngModel)]="Product.online_date" value="{{productOne.product_name}}">
         
       </div>
     </div>

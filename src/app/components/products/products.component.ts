@@ -15,8 +15,23 @@ export class ProductsComponent implements OnInit {
   public filterCategory : any
   searchKey:string ="";
   category:any=''
+  products:any=''
+ 
+  search:any=''
   constructor(public admin:AdminService,private actRoute:ActivatedRoute,public cartService:CartService,public wishService:WishlistService) { }
+  searchItem(val:any){
+    this.search=val.target.value
+    console.log(this.search);
+    
+    
+   this.productList= this.products.filter((value:any)=>{
+      return (
+        value.product_name.toLowerCase().includes(this.search.toLowerCase()) ||
+        value.product_category.toLowerCase().includes(this.search.toLowerCase())
+      );
 
+    })
+  }
 
   addtowish(item:any){
     this.wishService.addtoCart(item).subscribe((res:any)=>{
@@ -37,7 +52,8 @@ export class ProductsComponent implements OnInit {
   ngOnInit(): void {
     this.category=this.actRoute.snapshot.params['category']
     this.admin.GetProducts2(this.category).subscribe((res:any)=>{
-      this.productList=res
+      this.products=res
+      this.productList=this.products
 
 
     // })

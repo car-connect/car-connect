@@ -26,6 +26,7 @@ import { ContactusComponent } from './components/contactus/contactus.component';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { PrivacyComponent } from './components/privacy/privacy.component';
 import { PurchaseComponent } from './components/purchase/purchase.component';
+import { ConstructionComponent } from './components/construction/construction.component';
 
 
 const routes: Routes = [
@@ -49,6 +50,7 @@ const routes: Routes = [
   {path:"aboutus",component:AboutusComponent},
   {path:"privacy",component:PrivacyComponent},
   {path:"purchase",component:PurchaseComponent},
+  {path:'construction',component:ConstructionComponent},
   {path:"admin",component:AdminLoginComponent},
   {path:"adminhome",
   canActivate:[AdminGuardGuard],

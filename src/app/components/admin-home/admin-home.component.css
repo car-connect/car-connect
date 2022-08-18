@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+/* @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 
 *{
     box-sizing: border-box;
@@ -121,4 +121,7 @@ nav ul li + li + li{
 }
 .sidebar{
     margin-top: 60px;
-}
+} */
+
+				                
+body{margin-top:20px;}				              

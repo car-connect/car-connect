@@ -1,6 +1,19 @@
 
 <div class="card1 row">
+    <div class="flexbox1">
     <h1 class="text-center">PRODUCTS</h1>
+</div>
+<div class="flexbox">
+    <div class="search">
+      <h3>Search...</h3>
+      <div>
+        <input type="text"
+         placeholder="Search..."
+         (keyup)="searchItem($event)"
+         required>
+      </div>
+    </div>
+  </div>
 
     <div class="product-card float-left" *ngFor="let product of productList">
             

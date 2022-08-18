@@ -34,7 +34,7 @@ export class AdminmanageproductComponent implements OnInit {
   }
   update(product:any){
     localStorage.setItem('operation','edit')
-    this.router.navigate([`/adminhome/addproduct/${product.product_name}`])
+    this.router.navigate([`/adminhome/addproduct/${product._id}`])
     
   }
   

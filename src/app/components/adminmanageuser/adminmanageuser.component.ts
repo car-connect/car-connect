@@ -25,7 +25,7 @@ export class AdminmanageuserComponent implements OnInit {
   }
   constructor(public admin:AdminService) { }
   delete(id:any){
-    this.admin.deleteProduct(id)
+    this.admin.deleteUser(id)
   }
   
   ngOnInit(): void {

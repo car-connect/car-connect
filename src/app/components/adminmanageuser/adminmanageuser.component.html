@@ -15,13 +15,7 @@
         <tr>
           <th scope="col" >#</th>
           <th scope="col">Name</th>
-          <th scope="col">Price</th>
-          <th scope="col">Description</th>
-          <th scope="col">Category</th>
-          <th scope="col">Available_Quantity</th>
-          <th scope="col">Discount</th>
-          <th scope="col">Date</th>
-          <th scope="col"></th>
+          <th scope="col">email</th>
           <th scope="col"></th>
         </tr>
       </thead>
@@ -29,13 +23,7 @@
         <tr *ngFor="let user of UserItem">
           <th scope="row" >{{user.product_id}}</th>
           <td>{{user.name || user.username}}  </td>
-          <td>{{UserItem.UserItem_price}}</td>
-          <td>{{UserItem.UserItem_description}}</td>
-          <td>{{UserItem.UserItem_category}}</td>
-          <td>{{UserItem.available_quantity}}</td>
-          <td>{{UserItem.percentage_discount}}%</td>
-          <td>{{UserItem.online_date}}</td>
-          <td><button class="btn btn-info">Edit</button></td>
+          <td>{{ user.username}}  </td>
           <td><button class="btn btn-danger" (click)="delete(user._id)">Delete</button></td>
         </tr>
         

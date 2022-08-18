@@ -9,6 +9,9 @@ export class AdminHomeComponent implements OnInit {
   constructor() {
     //  slide()
    }
+   addproduct(){
+    localStorage.setItem('operation','add')
+   }
 
   ngOnInit(): void {
     localStorage.setItem('header','admin')

@@ -58,6 +58,15 @@ export class AdminService {
   
   
       
+  deleteUser(id:any){
+    return this.http.delete(`http://localhost:8000/admin/deleteuser/${id}`).subscribe((data)=>{
+      console.log(data);
+      
+      this.router.navigate(["adminhome"])
+      
+      
+    })
+  }
 
   deleteProduct(id:any){
 
