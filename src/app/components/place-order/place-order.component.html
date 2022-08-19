@@ -66,9 +66,9 @@
     </div>
   </div>
   <div class="col-25">
-    <div class="container" *ngFor="let cart of cartItems">
+    <div class="container" >
       <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b>{{cartItems.length}}</b></span></h4>
-      <p><a href="#">{{cart.product_name}}</a> <span class="price">&#x20b9;{{cart.product_price}}</span></p>
+      <p *ngFor="let cart of cartItems"><a href="#">{{cart.product_name}}</a> <span class="price">&#x20b9;{{cart.product_price}}</span></p>
       <hr>
       <p>Total <span class="price" style="color:black"><b>&#x20b9; {{grandTotal}}</b></span></p>
     </div>

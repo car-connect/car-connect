@@ -28,17 +28,19 @@ export class HeaderComponent implements OnInit {
     // this.cartService.removeAllCart()
     localStorage.clear()
     localStorage.setItem('header','out')
+    localStorage.setItem('operation','add')
     this.router.navigate(["login"])
   }
   logout(){
     localStorage.setItem('header','out')
     localStorage.removeItem('token')
+    this.router.navigate(["/admin"])
 
   }
   
 
   ngOnInit(): void {
-    this.cartService.getProducts1().subscribe((res:any)=>{
+    this.cartService.getProducts().subscribe((res:any)=>{
       this.totalItem=res.products.length
     })
    

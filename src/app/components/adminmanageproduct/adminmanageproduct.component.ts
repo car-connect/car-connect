@@ -14,8 +14,7 @@ export class AdminmanageproductComponent implements OnInit {
   search:any=''
   searchItem(val:any){
     this.search=val.target.value
-    console.log(this.search);
-    
+    console.log("Search",this.search);
     
    this.ProductItem= this.products.filter((value:any)=>{
       return (
@@ -27,11 +26,19 @@ export class AdminmanageproductComponent implements OnInit {
   }
 
   constructor(public admin:AdminService,private router:Router) { }
+
+  
   delete(product:any){
-    this.admin.deleteProduct(product._id)
+    this.admin.deleteProduct(product._id).subscribe((data)=>{
+      console.log("deleteProduct",data);
+      this.router.navigate(["adminhome/manageproduct"])
+      
+    })
     this.ProductItem=this.products.filter((result:any)=>result !=product)
 
   }
+
+  
   update(product:any){
     localStorage.setItem('operation','edit')
     this.router.navigate([`/adminhome/addproduct/${product._id}`])

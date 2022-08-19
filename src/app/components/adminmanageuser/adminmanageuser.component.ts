@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
@@ -23,9 +24,15 @@ export class AdminmanageuserComponent implements OnInit {
 
     })
   }
-  constructor(public admin:AdminService) { }
+  constructor(public admin:AdminService,private router:Router) { }
   delete(id:any){
-    this.admin.deleteUser(id)
+    this.admin.deleteUser(id).subscribe((data)=>{
+      console.log("deleteUser",data);
+      
+      this.router.navigate(["adminhome"])
+      
+      
+    })
   }
   
   ngOnInit(): void {

@@ -16,12 +16,12 @@ export class AdminHomeComponent implements OnInit {
   ngOnInit(): void {
     localStorage.setItem('header','admin')
 
-    const open:any = document.getElementById('open');
-    const close:any = document.getElementById('close');
-    const container:any = document.querySelector('.container');
+    // const open:any = document.getElementById('open');
+    // const close:any = document.getElementById('close');
+    // const container:any = document.querySelector('.container');
 
-    open.addEventListener('click', () => container.classList.add('show-nav'));
-    close.addEventListener('click', () => container.classList.remove('show-nav'))
+    // open.addEventListener('click', () => container.classList.add('show-nav'));
+    // close.addEventListener('click', () => container.classList.remove('show-nav'))
     
   }
 

@@ -22,8 +22,8 @@ export class SignupComponent implements OnInit {
     this.userService.UserADD(this.User)
   }
   validation(){
-    console.log(this.User);
-    console.log("working");
+    // console.log(this.User);
+    // console.log("working");
     
     
     

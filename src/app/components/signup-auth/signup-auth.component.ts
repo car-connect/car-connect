@@ -26,7 +26,7 @@ export class SignupAuthComponent implements OnInit {
   }
   ngOnInit(): void {
   this.user=this.route.snapshot.paramMap.get('user')
-  console.log("usss",this.user);
+  console.log("UserAuthParams",this.user);
   
   
   }

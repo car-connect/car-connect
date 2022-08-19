@@ -41,14 +41,14 @@ export class AdminaddproductComponent  {
     AuxUrl:this.filesUrl
   }
   image:any=''
-  handleImage(){
-   const formdata=new FormData;
-   formdata.append("file",this.image)
-   formdata.append("upload_preset","rjrvq9il")
-   this.image.withCredentials = false;
-   this.admin.ImageAdd(formdata)
+  // handleImage(){
+  //  const formdata=new FormData;
+  //  formdata.append("file",this.image)
+  //  formdata.append("upload_preset","rjrvq9il")
+  //  this.image.withCredentials = false;
+  //  this.admin.ImageAdd(formdata)
 
-  }
+  // }
 
   ProductAdd(){
     let operation=localStorage.getItem('operation')
@@ -60,7 +60,7 @@ export class AdminaddproductComponent  {
       // })
       
       this.admin.productEDIT({Name:product,Product:this.Product}).subscribe((res:any)=>{
-        console.log(res);
+        console.log("EditProduct",res);
         this.router.navigate(["adminhome/manageproduct"])
         
       })
@@ -68,12 +68,16 @@ export class AdminaddproductComponent  {
     }
     else{
 
-      this.admin.productADD(this.Product)
+      this.admin.productADD(this.Product) .subscribe((res:any)=>{
+        console.log("AddProduct",res);
+        this.router.navigate(["adminhome/manageproduct"])
+        
+      })
     }
 
   }
   setImage(e:any){
-    console.log(e.target.files[0]);
+    console.log("IMage",e.target.files[0]);
     this.image=e.target.files[0];
     
   }
@@ -100,14 +104,14 @@ export class AdminaddproductComponent  {
           }
         },
         (error) => {
-          console.log(error);
+          console.log("imageerror",error);
         },
         async() => {
           // Upload completed successfully, now we can get the download URL
           await getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
             console.log('File available at', downloadURL);
             this.fileUrl.push(downloadURL);
-            alert('uploaded')
+            alert('Image uploaded')
           });
         }
 

@@ -12,21 +12,20 @@ export class CartService {
   public productList=new BehaviorSubject<any>([]);
   public countWish:number=0;
   check:any=''
-
+  user:any=localStorage.getItem('user')
 
 
   constructor(public http:HttpClient) {}
+
+
+
    getProducts1=()=> {
     this.productList.asObservable().subscribe((res:any)=>{
       this.countWish=res.length
     })
     return  this.productList.asObservable()
    }
-   getProducts=()=>{
-    let user=localStorage.getItem('user')
-
-    return this.http.get(`http://localhost:8000/user/getcart/${user}`)
-   }
+   
    setProducts=(product:any)=> {
     this.cartItemList.push(...product);
     this.productList.next(product)
@@ -40,8 +39,11 @@ export class CartService {
     }
 
     return false;
-}
-   addtoCart=(product:any)=>{
+   }
+
+
+
+  addtoCart=(product:any)=>{
      this.check= this.containsObject(product,this.cartItemList)
      console.log(this.check);
      if(this.check==false){
@@ -50,15 +52,14 @@ export class CartService {
        this.productList.next(this.cartItemList)
        this.getProducts();
        this.getProducts1()
-       console.log(this.cartItemList);
+       console.log("observable cart",this.cartItemList);
        
-       let user=localStorage.getItem('user')
-       this.http.post(`http://localhost:8000/user/addtocart`,{cart:this.cartItemList,user:user}).subscribe((data)=>{
+       this.http.post(`http://localhost:8000/user/addtocart`,{cart:this.cartItemList,user:this.user}).subscribe((data)=>{
         console.log(data);
         
        })
-     }
-     else if(this.check==true){
+  }
+  else if(this.check==true){
       // let user=localStorage.getItem('user')
 
       // this.http.post(`http://localhost:8000/user/addtocart`,{cart:product,user:user}).subscribe((data)=>{
@@ -68,10 +69,13 @@ export class CartService {
       console.log("same product carted");
       
       
-     }
+  }
      
     
-   }
+}
+
+
+
    getTotalPrice() : number{
     let grandTotal:number = 0;
     this.cartItemList.map((a:any)=>{
@@ -79,6 +83,9 @@ export class CartService {
     })
     return grandTotal;
   }
+
+
+
   removeCartItem(product: any){
     this.cartItemList.map((a:any, index:any)=>{
       if(product.id=== a.id){
@@ -86,30 +93,33 @@ export class CartService {
       }
     })
     this.productList.next(this.cartItemList);
-    console.log(product);
-    let user=localStorage.getItem('user')
+    console.log("remove cart",product);
     
-   return this.http.post(`http://localhost:8000/user/deletecartproduct/${user}`,this.cartItemList)
+   return this.http.post(`http://localhost:8000/user/deletecartproduct/${this.user}`,this.cartItemList)
   }
+
+
+
+
   removeAllCart(){
     this.cartItemList = []
     this.productList.next(this.cartItemList);
-    let user=localStorage.getItem('user')
-    this.http.delete(`http://localhost:8000/user/deletecart/${user}`).subscribe((res:any)=>{
+    this.http.delete(`http://localhost:8000/user/deletecart/${this.user}`).subscribe((res:any)=>{
       console.log(res);
       
   
      })
   }
-  placeorder(item:any){
-    let user=localStorage.getItem('user')
-   return this.http.post(`http://localhost:8000/user/placeorder/${user}`,item)
-  }
-  getplaceorder(){
-    let user=localStorage.getItem('user')
-return this.http.get(`http://localhost:8000/user/getplaceorder/${user}`)
 
-  }
+  
+  placeorder=(item:any)=> this.http.post(`http://localhost:8000/user/placeorder/${this.user}`,item)
+  
+  getplaceorder=()=>      this.http.get(`http://localhost:8000/user/getplaceorder/${this.user}`)
+
+  getProducts=()=>        this.http.get(`http://localhost:8000/user/getcart/${this.user}`)
+
+
+  
 
    
  
