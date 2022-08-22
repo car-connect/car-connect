@@ -20,7 +20,7 @@ export class WishlistService {
 
     // return this.productList.asObservable();
     let user=localStorage.getItem('user')
-    return this.http.get(`http://localhost:8000/user/getwishproducts/${user}`)
+    return this.http.get(`https://car-connect123.herokuapp.com/user/getwishproducts/${user}`)
   }
 
   setProduct(product : any){
@@ -33,7 +33,7 @@ export class WishlistService {
     this.getTotalPrice();
     console.log(this.cartItemList)
     let user=localStorage.getItem('user')
-   return this.http.post(`http://localhost:8000/user/addtowish`,{wish:this.cartItemList,user:user})
+   return this.http.post(`https://car-connect123.herokuapp.com/user/addtowish`,{wish:this.cartItemList,user:user})
   }
   getTotalPrice() : number{
     let grandTotal = 0;
@@ -50,7 +50,7 @@ export class WishlistService {
     })
     this.productList.next(this.cartItemList);
     let user=localStorage.getItem('user')
-   return this.http.post(`http://localhost:8000/user/deletewishproduct/${user}`,this.cartItemList)
+   return this.http.post(`https://car-connect123.herokuapp.com/user/deletewishproduct/${user}`,this.cartItemList)
 
   }
  

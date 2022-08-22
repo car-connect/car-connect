@@ -16,7 +16,7 @@ export class SignupAuthComponent implements OnInit {
     console.log("suni");
     console.log(this.Key);
     
-    this.http.post(`http://localhost:8000/user/authpass`,{key:this.Key})
+    this.http.post(`https://car-connect123.herokuapp.com/user/authpass`,{key:this.Key})
     .subscribe((res)=>{
       console.log(res);
       this.router.navigate(["login"])

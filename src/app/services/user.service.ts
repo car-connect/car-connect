@@ -13,7 +13,7 @@ export class UserService {
   getToken=()=> localStorage.getItem('token');
 
   home(){
-    this.http.get(`http://localhost:8000/user/home`,{ headers: this.headers })
+    this.http.get(`https://car-connect123.herokuapp.com/user/home`,{ headers: this.headers })
     .subscribe((res)=>{
       console.log("check Home",res);
     })
@@ -26,7 +26,7 @@ export class UserService {
 
 
   UserADD(item:any){
-    this.http.post(`http://localhost:8000/user/signup`,item)
+    this.http.post(`https://car-connect123.herokuapp.com/user/signup`,item)
     .subscribe((res:any)=>{
       console.log("Signup",res);
       
@@ -47,7 +47,7 @@ export class UserService {
 
 
   GoogleADD(){
-    this.http.get(`http://localhost:8000/auth/google`)
+    this.http.get(`https://car-connect123.herokuapp.com/auth/google`)
     .subscribe((res)=>{
       console.log("Google",res);
       
@@ -56,7 +56,7 @@ export class UserService {
 
 
   loginADD(item:any){
-    this.http.post(`http://localhost:8000/user/login`,item,{ headers: this.headers })
+    this.http.post(`https://car-connect123.herokuapp.com/user/login`,item,{ headers: this.headers })
     .subscribe((res:any)=>{
       console.log("LoggedIN",res);
       if(res.message=='authenticated'){

@@ -54,7 +54,7 @@ export class CartService {
        this.getProducts1()
        console.log("observable cart",this.cartItemList);
        
-       this.http.post(`http://localhost:8000/user/addtocart`,{cart:this.cartItemList,user:this.user}).subscribe((data)=>{
+       this.http.post(`https://car-connect123.herokuapp.com/user/addtocart`,{cart:this.cartItemList,user:this.user}).subscribe((data)=>{
         console.log(data);
         
        })
@@ -62,7 +62,7 @@ export class CartService {
   else if(this.check==true){
       // let user=localStorage.getItem('user')
 
-      // this.http.post(`http://localhost:8000/user/addtocart`,{cart:product,user:user}).subscribe((data)=>{
+      // this.http.post(`https://car-connect123.herokuapp.com/user/addtocart`,{cart:product,user:user}).subscribe((data)=>{
       //   console.log(data);
         
       //  })
@@ -95,7 +95,7 @@ export class CartService {
     this.productList.next(this.cartItemList);
     console.log("remove cart",product);
     
-   return this.http.post(`http://localhost:8000/user/deletecartproduct/${this.user}`,this.cartItemList)
+   return this.http.post(`https://car-connect123.herokuapp.com/user/deletecartproduct/${this.user}`,this.cartItemList)
   }
 
 
@@ -104,7 +104,7 @@ export class CartService {
   removeAllCart(){
     this.cartItemList = []
     this.productList.next(this.cartItemList);
-    this.http.delete(`http://localhost:8000/user/deletecart/${this.user}`).subscribe((res:any)=>{
+    this.http.delete(`https://car-connect123.herokuapp.com/user/deletecart/${this.user}`).subscribe((res:any)=>{
       console.log(res);
       
   
@@ -112,11 +112,11 @@ export class CartService {
   }
 
   
-  placeorder=(item:any)=> this.http.post(`http://localhost:8000/user/placeorder/${this.user}`,item)
+  placeorder=(item:any)=> this.http.post(`https://car-connect123.herokuapp.com/user/placeorder/${this.user}`,item)
   
-  getplaceorder=()=>      this.http.get(`http://localhost:8000/user/getplaceorder/${this.user}`)
+  getplaceorder=()=>      this.http.get(`https://car-connect123.herokuapp.com/user/getplaceorder/${this.user}`)
 
-  getProducts=()=>        this.http.get(`http://localhost:8000/user/getcart/${this.user}`)
+  getProducts=()=>        this.http.get(`https://car-connect123.herokuapp.com/user/getcart/${this.user}`)
 
 
   
