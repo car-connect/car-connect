@@ -27,12 +27,12 @@ export class HeaderComponent implements OnInit {
   delToken(){
     // this.cartService.removeAllCart()
     localStorage.clear()
-    localStorage.setItem('header','out')
+    localStorage.removeItem('header')
     localStorage.setItem('operation','add')
     this.router.navigate(["login"])
   }
   logout(){
-    localStorage.setItem('header','out')
+    localStorage.removeItem('header')
     localStorage.removeItem('token')
     this.router.navigate(["/admin"])
 

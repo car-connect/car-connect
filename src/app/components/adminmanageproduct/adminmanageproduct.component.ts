@@ -37,6 +37,9 @@ export class AdminmanageproductComponent implements OnInit {
     this.ProductItem=this.products.filter((result:any)=>result !=product)
 
   }
+  addproduct(){
+    localStorage.setItem('operation','add')
+   }
 
   
   update(product:any){
